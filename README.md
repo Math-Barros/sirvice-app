@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="./assets/black_logo.png" alt="srvc" width="280"/>
+   <img src="./assets/images/black_logo.png" alt="srvc" width="280"/>
 </p>
 
 ---
