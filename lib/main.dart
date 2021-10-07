@@ -80,7 +80,9 @@ class MyAppState extends State<MyApp> with WidgetsBindingObserver {
     }
 
     return MaterialApp(
-        theme: ThemeData(colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Color(COLOR_PRIMARY))),
+        theme: ThemeData(
+            colorScheme: ColorScheme.fromSwatch()
+                .copyWith(secondary: Color(COLOR_PRIMARY))),
         debugShowCheckedModeBanner: false,
         color: Color(COLOR_PRIMARY),
         home: OnBoarding());

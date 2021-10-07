@@ -63,10 +63,10 @@ class _HomeState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(
           'Home',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Color(COLOR_PRIMARY),
         centerTitle: true,
       ),
       body: Center(

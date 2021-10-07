@@ -16,7 +16,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     'Flutter OnBoarding',
     'Firebase Auth',
     'Facebook Login',
-    'Instaflutter.com',
+    'Sirvice.com',
     'Jump straight into the action.'
   ];
 
@@ -32,7 +32,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     Icons.developer_mode,
     Icons.layers,
     Icons.account_circle,
-    'assets/images/ic_launcher_round.png',
+    'assets/images/white_logo.png',
     Icons.code
   ];
   int _currentIndex = 0;
