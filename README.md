@@ -36,19 +36,18 @@ This project was developed with the following technologies:
 ## :busts_in_silhouette: Team
 
 - [Matheus Lopes de Barros](https://github.com/Math-Barros) 
-- [Julia de Alvarenga Monaco](https://github.com/juliamonaco)
-- [Giullia Lazaro Zacarias](https://github.com/gzacarias)
 - [Felipe Menezes de Paiva](https://github.com/DevFelipe-Mene)
-- [Anna Carolina Neves Favaretto]()
-- [Ahalan Bessa Windson ](https://github.com/dasij)
+- [Ahalan Bessa Windson](https://github.com/dasij)
+- [Guilherme Trovo Feliciano](https://github.com/Trovovz)
+- [Rodrigo van Haastert Nogueira](https://github.com/Rodrigovhn)
 
 ---
 
-Developed by [Matheus Barros](https://github.com/Math-Barros) and [Julia Monaco](https://github.com/juliamonaco)
+Developed by [Matheus Barros](https://github.com/Math-Barros)
 
 # :closed_book: License
 
-Released in 2020 :closed_book: License
+Released in 2021 :closed_book: License
 
 This project is under the [MIT license](./LICENSE).
 
