@@ -1,3 +1,7 @@
+# Sirvice - Flutter UI 
+
+A Flutter UI design implementation for a freelancer App.
+
 <p align="center">
    <img src="./assets/images/black_logo.png" alt="srvc" width="280"/>
 </p>
@@ -5,7 +9,7 @@
 ---
 
 <p align="center">	
-   <a href="https://www.linkedin.com/in/matheus-barros-a1646715a/">
+   <a href="https://www.linkedin.com/in/mathbarros/">
       <img alt="Matheus Barros" src="https://img.shields.io/badge/-Matheus Barros-red?style=flat&logo=Linkedin&logoColor=white" />
    </a>
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/Math-Barros/sirvice-app?color=red">
@@ -18,12 +22,6 @@
     <img alt="Stargazers" src="https://img.shields.io/github/stars/Math-Barros/sirvice-app?color=red&logo=github">
   </a>
 </p>
-
-:computer: Virtual Assistant for the MPSP website.
-
-The team must develop and prototype virtual assistant solutions for the
-MPSP website with a standard of facilitation the citizen's contact with the ministry
-public and its sectors.
 
 ## :sparkles: Technologies
 
