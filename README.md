@@ -3,7 +3,7 @@
 A Flutter UI design implementation for a freelancer App.
 
 <p align="center">
-   <img src="./assets/images/black_logo.png" alt="srvc" width="280"/>
+   <img src="./assets/black_logo.png" alt="srvc" width="280"/>
 </p>
 
 ---
