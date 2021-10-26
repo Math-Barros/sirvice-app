@@ -151,7 +151,7 @@ class _ItemsState extends State<Items> {
                     },
                     color: Colors.white,
                     child: Text(
-                      'Browse All',
+                      'Ver todos',
                       style: TextStyle(
                           fontSize: 22.0,
                           fontWeight: FontWeight.bold

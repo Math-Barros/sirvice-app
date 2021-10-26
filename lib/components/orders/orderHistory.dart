@@ -36,7 +36,7 @@ class _OrderHistoryState extends State<OrderHistory> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       key: _scaffoldKey,
-      appBar: header('Orders', _scaffoldKey, showCartIcon, context),
+      appBar: header('Pedidos', _scaffoldKey, showCartIcon, context),
       drawer: sidebar(context),
       body: Container(
         child: Padding(
@@ -74,7 +74,7 @@ class _OrderHistoryState extends State<OrderHistory> {
                               child: Align(
                                 alignment: Alignment.bottomRight,
                                 child: Text(
-                                  'Ordered $orderedDate',
+                                  'Pedido feito em $orderedDate',
                                   style: TextStyle(
                                     fontSize: 18.0,
                                     color: Colors.white,
@@ -85,7 +85,7 @@ class _OrderHistoryState extends State<OrderHistory> {
                             ),
                             Center(
                               child: Text(
-                                'Order Placed',
+                                'Pedido realizado',
                                 style: TextStyle(
                                   fontSize: 20.0,
                                   fontFamily: 'Novasquare',
@@ -147,7 +147,7 @@ class _OrderHistoryState extends State<OrderHistory> {
                               color: Color(0xff313134),
                               onPressed: (){ },
                               child: Text(
-                                'REORDER',
+                                'Pedir novamente',
                                 style: TextStyle(
                                   fontSize: 17.0,
                                   color: Colors.white,

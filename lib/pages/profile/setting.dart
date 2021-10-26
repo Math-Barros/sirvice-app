@@ -53,7 +53,7 @@ class _ProfileSettingState extends State<ProfileSetting> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              'SECURITY',
+              'Segurança',
               style: TextStyle(
                 fontSize: 18.0,
                 letterSpacing: 1.0
@@ -62,7 +62,7 @@ class _ProfileSettingState extends State<ProfileSetting> {
             ListTile(
               contentPadding: EdgeInsets.zero,
               leading: Text(
-                'Enable Face ID / Touch ID login',
+                'Habilitar toque para logar',
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold
@@ -76,7 +76,7 @@ class _ProfileSettingState extends State<ProfileSetting> {
             ),
             SizedBox(height: 20.0),
             Text(
-              'PUSH NOTIFICATIONS',
+              'Notificações',
               style: TextStyle(
                   fontSize: 18.0,
                   letterSpacing: 1.0
@@ -85,7 +85,7 @@ class _ProfileSettingState extends State<ProfileSetting> {
             ListTile(
               contentPadding: EdgeInsets.zero,
               leading: Text(
-                'Order Updates',
+                'Atualizações de pedido',
                 style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold
@@ -100,7 +100,7 @@ class _ProfileSettingState extends State<ProfileSetting> {
             ListTile(
               contentPadding: EdgeInsets.zero,
               leading: Text(
-                'New arrivals',
+                'Novos pedidos',
                 style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold
@@ -115,7 +115,7 @@ class _ProfileSettingState extends State<ProfileSetting> {
             ListTile(
               contentPadding: EdgeInsets.zero,
               leading: Text(
-                'Promotions',
+                'Promoções',
                 style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold
@@ -130,7 +130,7 @@ class _ProfileSettingState extends State<ProfileSetting> {
             ListTile(
               contentPadding: EdgeInsets.zero,
               leading: Text(
-                'Sales alerts',
+                'Alertas de ofertas',
                 style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold
@@ -144,7 +144,7 @@ class _ProfileSettingState extends State<ProfileSetting> {
             ),
             SizedBox(height: 20.0),
             Text(
-              'ACCOUNT',
+              'Conta',
               style: TextStyle(
                   fontSize: 18.0,
                   letterSpacing: 1.0
@@ -156,7 +156,7 @@ class _ProfileSettingState extends State<ProfileSetting> {
               child: ListTile(
                 title: Center(
                   child: Text(
-                    'Support',
+                    'Suporte',
                     style: TextStyle(
                       fontSize: 20.0,
                       color: Colors.blue,

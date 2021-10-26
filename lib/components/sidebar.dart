@@ -28,7 +28,7 @@ Widget sidebar(BuildContext context){
               ListTile(
                 leading: Icon(Icons.home),
                 title:Text(
-                  'HOME',
+                  'Home',
                   style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -42,7 +42,7 @@ Widget sidebar(BuildContext context){
               ListTile(
                 leading: Icon(Icons.shopping_cart),
                 title: Text(
-                  'SHOP',
+                  'Loja',
                   style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -68,7 +68,7 @@ Widget sidebar(BuildContext context){
               ListTile(
                 leading: Icon(Icons.local_mall),
                 title: Text(
-                  'BAG',
+                  'Sacola',
                   style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -95,7 +95,7 @@ Widget sidebar(BuildContext context){
               ListTile(
                 leading: Icon(Icons.search),
                 title: Text(
-                  'SEARCH',
+                  'Procura',
                   style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -106,7 +106,7 @@ Widget sidebar(BuildContext context){
               ListTile(
                 leading: Icon(Icons.local_shipping),
                 title: Text(
-                  'ORDERS',
+                  'Pedidos',
                   style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -130,7 +130,7 @@ Widget sidebar(BuildContext context){
               ListTile(
                 leading: Icon(Icons.favorite_border),
                 title: Text(
-                  'WISHLIST',
+                  'Lista de desejos',
                   style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -154,7 +154,7 @@ Widget sidebar(BuildContext context){
               ListTile(
                 leading: Icon(Icons.person),
                 title: Text(
-                  'PROFILE',
+                  'Perfil',
                   style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,

@@ -112,7 +112,7 @@ class Start extends StatelessWidget {
                   color: Colors.white,
                   textColor: Colors.black,
                   child: Text(
-                    'Sign Up',
+                    'Cadastrar',
                     style: TextStyle(
                         fontFamily: 'NovaSquare',
                         fontSize: SizeConfig.safeBlockHorizontal * 4.5,

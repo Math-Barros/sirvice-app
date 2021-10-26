@@ -30,8 +30,8 @@ class _HomeState extends State<Home> {
                 builder: (context) => AlertDialog(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(24.0)),
-                      title: Text('Are you sure ?'),
-                      content: Text('Do you want to exit an App'),
+                      title: Text('você tem certeza?'),
+                      content: Text('Você quer sair do app?'),
                       actions: <Widget>[
                         FlatButton(
                           onPressed: () => Navigator.of(context).pop(false),
@@ -55,7 +55,7 @@ class _HomeState extends State<Home> {
       },
       child: Scaffold(
           key: _scaffoldKey,
-          appBar: header('Shop Mart', _scaffoldKey, showCartIcon, context),
+          appBar: header('Sirvice', _scaffoldKey, showCartIcon, context),
           drawer: sidebar(context),
           body: Container(
             color: Colors.white,
@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
                       padding: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 20.0),
                       child: Center(
                         child: Text(
-                          'New Arrivals',
+                          'Novos serviços',
                           style: TextStyle(
                               fontSize: 30.0,
                               fontWeight: FontWeight.bold,
@@ -82,7 +82,7 @@ class _HomeState extends State<Home> {
                       padding: EdgeInsets.only(top: 30.0, bottom: 15.0),
                       child: Center(
                         child: Text(
-                          'Featured',
+                          'Destaques',
                           style: TextStyle(
                               fontSize: 30.0,
                               fontWeight: FontWeight.bold,

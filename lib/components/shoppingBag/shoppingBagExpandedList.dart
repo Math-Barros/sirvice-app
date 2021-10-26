@@ -27,7 +27,7 @@ class _ShoppingBagExpandedListState extends State<ShoppingBagExpandedList> {
                     child: Column(
                       children: <Widget>[
                         Text(
-                          'Size',
+                          'Tamanho',
                           style: TextStyle(
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
@@ -52,7 +52,7 @@ class _ShoppingBagExpandedListState extends State<ShoppingBagExpandedList> {
                     child: Column(
                       children: <Widget>[
                         Text(
-                          'Color',
+                          'Cor',
                           style: TextStyle(
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class _ShoppingBagExpandedListState extends State<ShoppingBagExpandedList> {
                   child: Column(
                     children: <Widget>[
                       Text(
-                        'Quantity',
+                        'Quantidade',
                         style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,

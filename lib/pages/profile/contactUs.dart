@@ -16,7 +16,7 @@ class _ContactUsState extends State<ContactUs> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       key: _scaffoldKey,
-      appBar: ProfileAppBar('Contact Us', context),
+      appBar: ProfileAppBar('Contato', context),
       body: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,7 +25,7 @@ class _ContactUsState extends State<ContactUs> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.0),
               child: Text(
-                'CONTACT',
+                'Contato',
                 style: TextStyle(
                     fontSize: 15.0,
                     letterSpacing: 1.0
@@ -37,7 +37,7 @@ class _ContactUsState extends State<ContactUs> {
               color: Colors.white,
               child: ListTile(
                 title: Text(
-                  'Our address',
+                  'Nosso email',
                   style: TextStyle(
                     fontSize:20.0,
                     letterSpacing: 1.0,
@@ -45,7 +45,7 @@ class _ContactUsState extends State<ContactUs> {
                   ),
                 ),
                 subtitle: Text(
-                  '1412 Steiner Street, San Francisco, CA, 94115',
+                  'Support@sirvice.com',
                   style: TextStyle(
                     fontSize:16.0,
                     fontWeight: FontWeight.bold
@@ -57,7 +57,7 @@ class _ContactUsState extends State<ContactUs> {
               color: Colors.white,
               child: ListTile(
                 leading: Text(
-                  'E-mail us',
+                  'Nosso telefone',
                   style: TextStyle(
                     fontSize:20.0,
                     letterSpacing: 1.0,
@@ -65,7 +65,7 @@ class _ContactUsState extends State<ContactUs> {
                   ),
                 ),
                 trailing: Text(
-                  'office@shopertino.com',
+                  '(11)6969-6969',
                   style: TextStyle(
                     fontSize: 20.0,
                     color: Colors.grey
@@ -76,7 +76,7 @@ class _ContactUsState extends State<ContactUs> {
             Padding(
               padding: EdgeInsets.only(top: 20.0, left: 10.0),
               child: Text(
-                'Our business hour are Mon - Fri, 10am - 6pm, PST'
+                'Nosso horário de funcionamento, Segunda à Sexta, 10h - 17h'
               ),
             ),
             SizedBox(height: 20.0),
@@ -85,7 +85,7 @@ class _ContactUsState extends State<ContactUs> {
               child: ListTile(
                 title: Center(
                   child: Text(
-                    'Call Us',
+                    '',
                     style: TextStyle(
                       fontSize: 20.0,
                       color: Colors.blue

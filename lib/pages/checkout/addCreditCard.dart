@@ -16,7 +16,7 @@ class AddCreditCard extends StatefulWidget {
 class _AddCreditCardState extends State<AddCreditCard> {
   String cardNumber = 'XXXX XXXX XXXX XXXX';
   String expiryDate = 'MM/YY';
-  String cardHolderName ='CardHolder name';
+  String cardHolderName ='Nome do titular do cartão';
   String cvvCode = 'CVV/CVC';
   bool isCvvFocused = false;
   bool autoValidate = false;
@@ -69,7 +69,7 @@ class _AddCreditCardState extends State<AddCreditCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    'Add new Card',
+                    'Adicionar novo cartão',
                     style: TextStyle(
                       fontSize: 35.0,
                       letterSpacing: 1.0,
@@ -229,7 +229,7 @@ class _AddCreditCardState extends State<AddCreditCard> {
                         });
                       },
                       decoration: InputDecoration(
-                        labelText: 'Card Name'
+                        labelText: 'Nome do cartão'
                       ),
                       keyboardType: TextInputType.text,
                       validator: (String value) => value.isEmpty ? ErrorString.reqField : null,

@@ -16,7 +16,7 @@ class _AdminPanelState extends State<AdminPanel> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create sample data'),
+        title: Text('Criar sample'),
         iconTheme: IconThemeData(
             color: Colors.black
         ),
@@ -31,7 +31,7 @@ class _AdminPanelState extends State<AdminPanel> {
               adminService.createSampleData();
             },
             child: Text(
-              'Load data',
+              'Carregar dados',
               style: TextStyle(
                 fontFamily: 'NovaSquare',
                 color: Colors.white,

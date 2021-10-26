@@ -8,12 +8,12 @@ import 'package:sliver_glue/sliver_glue.dart';
 class ShowBottomScreen extends StatelessWidget {
   final List iconList = new List();
   void createIconList(){
-    iconList.add({'name':'Message', 'iconName':FontAwesomeIcons.envelope, 'color':Color(0xff4168e1)});
-    iconList.add({'name':'News Feed', 'iconName':FontAwesomeIcons.facebook, 'color':Color(0xff3b5998)});
+    iconList.add({'name':'Mensagem', 'iconName':FontAwesomeIcons.envelope, 'color':Color(0xff4168e1)});
+    iconList.add({'name':'Feed de notícias', 'iconName':FontAwesomeIcons.facebook, 'color':Color(0xff3b5998)});
     iconList.add({'name':'Direct', 'iconName':FontAwesomeIcons.instagram, 'color':Color(0xffddd287b)});
     iconList.add({'name':'WhatsApp', 'iconName':FontAwesomeIcons.whatsapp, 'color':Color(0xff128C7E)});
-    iconList.add({'name':'Save to drive', 'iconName':FontAwesomeIcons.googleDrive,'color':Color(0xffFFD04B)});
-    iconList.add({'name':'Private message', 'iconName':FontAwesomeIcons.linkedin, 'color':Color(0xff0e76a8)});
+    iconList.add({'name':'Salvar no drive', 'iconName':FontAwesomeIcons.googleDrive,'color':Color(0xffFFD04B)});
+    iconList.add({'name':'Mensagem privada', 'iconName':FontAwesomeIcons.linkedin, 'color':Color(0xff0e76a8)});
     iconList.add({'name':'Telegram', 'iconName':FontAwesomeIcons.telegram, 'color':Color(0xff0088cc)});
   }
 
@@ -78,7 +78,7 @@ class ShowBottomScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 2.0),
                           Text(
-                              'Add to reading list',
+                              'Adicionar para a lista de leitura',
                             textAlign: TextAlign.center,
                           )
                         ],
@@ -101,7 +101,7 @@ class ShowBottomScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 16.0),
                           Text(
-                            'Copy',
+                            'Copiar',
                             textAlign: TextAlign.center,
                           )
                         ],
@@ -124,7 +124,7 @@ class ShowBottomScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 16.0),
                           Text(
-                            'More',
+                            'Mais',
                             textAlign: TextAlign.center,
                           )
                         ],

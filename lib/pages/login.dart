@@ -71,7 +71,7 @@ class _LoginState extends State<Login> {
     return InputDecoration(
         hintText: text,
         labelText: text,
-        prefixIcon: Icon(text == 'Password'? Icons.lock : Icons.email),
+        prefixIcon: Icon(text == 'Senha'? Icons.lock : Icons.email),
         contentPadding: EdgeInsets.all(customWidth['fieldPadding']),
         errorBorder: this.setBorder(1.8, Colors.red),
         focusedErrorBorder: this.setBorder(1.2, Colors.red),
@@ -143,7 +143,7 @@ class _LoginState extends State<Login> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  'Sign In',
+                  'Cadastrar',
                   style: TextStyle(
                     fontSize: SizeConfig.safeBlockHorizontal * 10.5,
                     fontWeight: FontWeight.bold,
@@ -171,7 +171,7 @@ class _LoginState extends State<Login> {
                       SizedBox(height: customWidth['formFieldSpacing']),
                       TextFormField(
                         obscureText: true,
-                        decoration: customFormField('Password'),
+                        decoration: customFormField('Senha'),
                         validator: (value) => _validateService.isEmptyField(value),
                         onSaved: (String val){
                           userValues['password'] = val;
@@ -212,7 +212,7 @@ class _LoginState extends State<Login> {
                             ),
                             SizedBox(height: SizeConfig.safeBlockVertical * 2.5),
                             Text(
-                                'OR',
+                                'OU',
                               style: TextStyle(
                                 fontSize: SizeConfig.safeBlockVertical * 3.6
                               ),

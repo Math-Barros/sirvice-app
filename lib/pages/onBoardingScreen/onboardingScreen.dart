@@ -47,7 +47,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           child: Align(
             alignment: Alignment.centerRight,
             child: Text(
-              'Skip',
+              'Pular',
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.w600,

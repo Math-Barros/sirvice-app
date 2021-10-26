@@ -84,7 +84,7 @@ class _ShoppingBagState extends State<ShoppingBag> {
             borderRadius: BorderRadius.circular(24.0)
           ),
           title: Text(
-            'Remove from cart',
+            'Remover do carrinho',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 24.0,
@@ -93,7 +93,7 @@ class _ShoppingBagState extends State<ShoppingBag> {
             ),
           ),
           content: Text(
-            'This product will be removed from cart',
+            'Esse produto será removido do carrinho',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 20.0
@@ -109,7 +109,7 @@ class _ShoppingBagState extends State<ShoppingBag> {
                       removeItem(id,context);
                     },
                     child: Text(
-                      'Remove',
+                      'Remover',
                       style: TextStyle(
                         fontSize: 20.0,
                         color: Colors.redAccent
@@ -125,7 +125,7 @@ class _ShoppingBagState extends State<ShoppingBag> {
                       Navigator.of(context, rootNavigator: true).pop();
                     },
                     child: Text(
-                      'Cancel',
+                      'Cancelar',
                       style: TextStyle(
                         fontSize: 20.0,
                         color: Colors.blue
@@ -169,7 +169,7 @@ class _ShoppingBagState extends State<ShoppingBag> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'No items existed. Shop for new products',
+              'Nenhum item encontrado. procure novos serviços',
               style: TextStyle(
                 fontSize: 20.0
               ),
@@ -200,7 +200,7 @@ class _ShoppingBagState extends State<ShoppingBag> {
 
                 },
                 child: Text(
-                  'Shop',
+                  'Loja',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
@@ -314,7 +314,7 @@ class _ShoppingBagState extends State<ShoppingBag> {
       child: Scaffold(
         backgroundColor: Colors.grey[200],
         key: _scaffoldKey,
-        appBar: header('Shopping Bag', _scaffoldKey, showCartIcon, context),
+        appBar: header('Sacola de compras', _scaffoldKey, showCartIcon, context),
         drawer: sidebar(context),
         bottomNavigationBar: BottomAppBar(
           child: Padding(
@@ -362,7 +362,7 @@ class _ShoppingBagState extends State<ShoppingBag> {
                           }
                         },
                         child: Text(
-                          'CONTINUE',
+                          'CONTINUAR',
                           style: TextStyle(
                             fontSize: 20.0,
                             color: Colors.white,

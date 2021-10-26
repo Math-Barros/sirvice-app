@@ -36,7 +36,7 @@ class _ParticularItemState extends State<ParticularItem> {
   int productQuantity = 1;
 
   setItemDetails(item){
-    print('set item details');
+    print('Definir detalhes do item');
     Map<String,dynamic> args = widget.itemDetails;
     setState(() {
       if(widget.editProduct){
@@ -136,7 +136,7 @@ class _ParticularItemState extends State<ParticularItem> {
         backgroundColor: color,
         content: new Text(msg),
         action: SnackBarAction(
-          label:'Close',
+          label:'Fechar',
           textColor: Colors.white,
           onPressed: (){
             _productScaffoldKey.currentState.removeCurrentSnackBar();

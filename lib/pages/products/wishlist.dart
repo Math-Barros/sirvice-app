@@ -35,7 +35,7 @@ class _WishListState extends State<WishList> {
         backgroundColor: color,
         content: new Text(msg),
         action: SnackBarAction(
-          label:'Close',
+          label:'Fechar',
           textColor: Colors.white,
           onPressed: (){
             _scaffoldKey.currentState.removeCurrentSnackBar();
@@ -50,7 +50,7 @@ class _WishListState extends State<WishList> {
     _userService.deleteUserWishlistItems(productId);
     setState(() {
       userList.removeAt(index);
-      showInSnackBar('Item removed from wishlist', Colors.black);
+      showInSnackBar('Item removido da lista de desejos', Colors.black);
     });
   }
 
@@ -61,7 +61,7 @@ class _WishListState extends State<WishList> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'It seems nothing is here',
+              'Parece que não há nada aqui',
               style: TextStyle(
                 fontSize: 25.0,
                 fontFamily: 'NovaSquare',
@@ -69,7 +69,7 @@ class _WishListState extends State<WishList> {
             ),
             SizedBox(height: 10.0),
             Text(
-              'Make a wish!',
+              'Faça um desejo!',
               style: TextStyle(
                 fontSize: 25.0,
                 fontFamily: 'NovaSquare',
@@ -106,7 +106,7 @@ class _WishListState extends State<WishList> {
                   }
                 },
                 child: Text(
-                  'Shop',
+                  'Loja',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
@@ -126,7 +126,7 @@ class _WishListState extends State<WishList> {
     setWishlistItems();
     return Scaffold(
       key: _scaffoldKey,
-      appBar: header('Wishlist', _scaffoldKey, showCartIcon, context),
+      appBar: header('Lista de desejos', _scaffoldKey, showCartIcon, context),
       drawer: sidebar(context),
       body: Padding(
         padding: EdgeInsets.all(10.0),

@@ -106,7 +106,7 @@ class _SignUpState extends State<SignUp> {
   Icon setFormIcons(String label){
     Icon icon;
     switch(label){
-      case 'Full name':{
+      case 'Nome completo':{
         icon = Icon(Icons.person);
         break;
       }
@@ -114,11 +114,11 @@ class _SignUpState extends State<SignUp> {
         icon = Icon(Icons.email);
         break;
       }
-      case 'Mobile number':{
+      case 'Telefone':{
         icon = Icon(Icons.call);
         break;
       }
-      case 'Password':{
+      case 'Senha':{
         icon = Icon(Icons.lock);
         break;
       }
@@ -154,13 +154,13 @@ class _SignUpState extends State<SignUp> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "Let's Get Started",
+                  "Vamos começar",
                   style: TextStyle(
                       fontFamily: 'NovaSquare',
                       fontSize: SizeConfig.safeBlockHorizontal * 8.0),
                 ),
                 Text(
-                  'Create an account to get all features',
+                  'Criar uma conta para ter todos os benefícios',
                   style: TextStyle(
                     fontFamily: 'NovaSquare',
                     fontSize: SizeConfig.safeBlockHorizontal * 3.8,
@@ -173,7 +173,7 @@ class _SignUpState extends State<SignUp> {
                   child: Column(
                     children: <Widget>[
                       TextFormField(
-                        decoration: this.customFormField('Full name'),
+                        decoration: this.customFormField('Nome completo'),
                         validator: (value) =>
                             validateService.isEmptyField(value),
                         onSaved: (String val) {
@@ -185,7 +185,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                       SizedBox(height: customWidth['formFieldSpacing']),
                       TextFormField(
-                        decoration: this.customFormField('Mobile number'),
+                        decoration: this.customFormField('Telefone'),
                         keyboardType: TextInputType.phone,
                         validator: (value) =>
                             validateService.validatePhoneNumber(value),
@@ -211,7 +211,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                       SizedBox(height: customWidth['formFieldSpacing']),
                       TextFormField(
-                        decoration: this.customFormField('Password'),
+                        decoration: this.customFormField('Senha'),
                         obscureText: true,
                         validator: (value) =>
                             validateService.validatePassword(value),
@@ -233,7 +233,7 @@ class _SignUpState extends State<SignUp> {
                           color: Colors.black87,
                           textColor: Colors.white,
                           child: Text(
-                            'Sign Up',
+                            'Cadastrar',
                             style: TextStyle(
                                 fontFamily: 'NovaSquare',
                                 fontSize: SizeConfig.safeBlockHorizontal * 5.2,

@@ -42,7 +42,7 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: firstTime ? '/' : '/onBoarding',
+      initialRoute: firstTime ? '/admin' : '/onBoarding',
       routes: {
         '/': (context) => Start(),
         '/login': (context) => Login(),

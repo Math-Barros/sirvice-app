@@ -48,7 +48,7 @@ class _UserProfileState extends State<UserProfile> {
     setProfileDetails(context);
     return Scaffold(
       key: _scaffoldKey,
-      appBar: header('Profile', _scaffoldKey,showCartIcon,context),
+      appBar: header('Perfil', _scaffoldKey,showCartIcon,context),
       drawer: sidebar(context),
       body: Container(
         alignment: Alignment.center,
@@ -84,7 +84,7 @@ class _UserProfileState extends State<UserProfile> {
                   color: Colors.blueAccent,
                 ),
                 title: Text(
-                  'Account Details',
+                  'Detalhes da conta',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 22.0
@@ -115,7 +115,7 @@ class _UserProfileState extends State<UserProfile> {
                   color: Colors.red,
                 ),
                 title: Text(
-                  'WishList',
+                  'Lista de desejos',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 22.0
@@ -145,7 +145,7 @@ class _UserProfileState extends State<UserProfile> {
                   size: 40.0,
                 ),
                 title: Text(
-                  'Order History',
+                  'Histórico de pedidos',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 22.0
@@ -176,7 +176,7 @@ class _UserProfileState extends State<UserProfile> {
                   color: Colors.grey,
                 ),
                 title: Text(
-                  'Settings',
+                  'Configurações',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 22.0
@@ -208,7 +208,7 @@ class _UserProfileState extends State<UserProfile> {
                   color: Colors.green,
                 ),
                 title: Text(
-                  'Contact Us',
+                  'Contato',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 22.0

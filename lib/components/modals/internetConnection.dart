@@ -34,14 +34,14 @@ void internetConnectionDialog(BuildContext context) async{
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
-                    'No internet connection found',
+                    'Nenhuma conexão de internet encontrada',
                     style: TextStyle(
                       fontSize: 20.0
                     ),
                   ),
                 ),
                 Text(
-                  'Check your connection',
+                  'Cheque sua conexão',
                   style: TextStyle(
                     fontSize: 20.0
                   ),
@@ -52,7 +52,7 @@ void internetConnectionDialog(BuildContext context) async{
                     width: double.infinity,
                     height: 50.0,
                     child: ElevatedButton(
-                      child: Text('Close',
+                      child: Text('Fechar',
                         style: TextStyle(
                           fontSize: 18.0
                         ),

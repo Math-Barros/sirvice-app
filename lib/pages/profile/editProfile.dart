@@ -93,7 +93,7 @@ class _EditProfileState extends State<EditProfile> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       key: _scaffoldKey,
-      appBar: header('Edit Profile', _scaffoldKey, showCartIcon, context),
+      appBar: header('Editar perfil', _scaffoldKey, showCartIcon, context),
       drawer: sidebar(context),
       body: Container(
         child: Form(
@@ -105,7 +105,7 @@ class _EditProfileState extends State<EditProfile> {
               Padding(
                 padding: EdgeInsets.fromLTRB(10.0, 40.0, 10.0, 10.0),
                 child: Text(
-                  'PUBLIC PROFILE',
+                  'Perfil público',
                   style: TextStyle(
                     fontFamily: 'NovaSquare',
                     fontSize: SizeConfig.safeBlockHorizontal * 5.2,
@@ -124,7 +124,7 @@ class _EditProfileState extends State<EditProfile> {
                 child: Column(
                   children: <Widget>[
                     TextFormField(
-                      decoration: customFormField('Full name'),
+                      decoration: customFormField('Nome completo'),
                       initialValue: fullName,
                       validator: (value)=> _validateService.isEmptyField(value),
                       keyboardType: TextInputType.text,
@@ -140,7 +140,7 @@ class _EditProfileState extends State<EditProfile> {
               Padding(
                 padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
                 child: Text(
-                  'PRIVATE PROFILE',
+                  'Perfil privado',
                   style: TextStyle(
                     fontFamily: 'NovaSquare',
                     fontSize: SizeConfig.safeBlockHorizontal * 5.2,
@@ -159,7 +159,7 @@ class _EditProfileState extends State<EditProfile> {
                 child: Column(
                   children: <Widget>[
                     TextFormField(
-                      decoration: customFormField('E-mail address'),
+                      decoration: customFormField('E-mail'),
                       initialValue: email,
                       keyboardType: TextInputType.emailAddress,
                       validator: (value)=> _validateService.isEmptyField(value),
@@ -171,7 +171,7 @@ class _EditProfileState extends State<EditProfile> {
                     ),
                     SizedBox(height: 20.0),
                     TextFormField(
-                      decoration: customFormField('Phone number'),
+                      decoration: customFormField('Telefone'),
                       initialValue: mobileNumber,
                       validator: (value)=> _validateService.isEmptyField(value),
                       keyboardType: TextInputType.phone,
@@ -212,7 +212,7 @@ class _EditProfileState extends State<EditProfile> {
                 validateProfile(context);
               },
               child: Text(
-                'UPDATE',
+                'Atualizar',
                 style: TextStyle(
                   fontFamily: 'NovaSquare',
                   fontSize: SizeConfig.safeBlockHorizontal * 4.6,

@@ -44,19 +44,19 @@ class _HorizontalListState extends State<CategoryCarousal> {
 
   final category = <Category>[
     Category(
-        name: 'CLOTHING',
+        name: 'Roupas',
         url: 'assets/shop/clothing.jpg'
     ),
     Category(
-        name: 'ACCESSORIES',
+        name: 'Acessórios',
         url: 'assets/shop/accessories.png'
     ),
     Category(
-      name: 'SHOES',
+      name: 'Sapatos',
       url: 'assets/shop/shoes.jpg'
     ),
     Category(
-      name: 'ELECTRONICS',
+      name: 'Eletrônicos',
       url: 'assets/shop/electronics.jpg'
     )
   ];
