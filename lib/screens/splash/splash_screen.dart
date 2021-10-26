@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sirvice_app/constants.dart';
 import 'package:sirvice_app/screens/splash/components/body.dart';
 import 'package:sirvice_app/size_config.dart';
 
@@ -9,6 +10,7 @@ class SplashScreen extends StatelessWidget {
     // You have to call it on your starting screen
     SizeConfig().init(context);
     return Scaffold(
+      backgroundColor: kGrey,
       body: Body(),
     );
   }
