@@ -3,7 +3,6 @@ import 'package:sirvice_app/components/default_button.dart';
 import 'package:sirvice_app/models/Project.dart';
 import 'package:sirvice_app/size_config.dart';
 
-import 'color_dots.dart';
 import 'product_description.dart';
 import 'top_rounded_container.dart';
 import 'product_images.dart';
@@ -30,7 +29,6 @@ class Body extends StatelessWidget {
                 color: Color(0xFFF6F7F9),
                 child: Column(
                   children: [
-                    ColorDots(project: project),
                     TopRoundedContainer(
                       color: Colors.white,
                       child: Padding(
