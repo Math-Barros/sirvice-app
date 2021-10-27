@@ -4,8 +4,8 @@ import 'package:sirvice_app/screens/sign_up/sign_up_screen.dart';
 import '../constants.dart';
 import '../size_config.dart';
 
-class NoAccountText extends StatelessWidget {
-  const NoAccountText({
+class NoAccountTextLogin extends StatelessWidget {
+  const NoAccountTextLogin({
     Key? key,
   }) : super(key: key);
 
@@ -15,13 +15,13 @@ class NoAccountText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "Don’t have an account? ",
+          "Ainda não possui uma conta? ",
           style: TextStyle(fontSize: getProportionateScreenWidth(16)),
         ),
         GestureDetector(
           onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
           child: Text(
-            "Sign Up",
+            "Cadastre-se",
             style: TextStyle(
                 fontSize: getProportionateScreenWidth(16),
                 color: kPrimaryColor),
