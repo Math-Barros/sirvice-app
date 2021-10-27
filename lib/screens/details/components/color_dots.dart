@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sirvice_app/components/rounded_icon_btn.dart';
-import 'package:sirvice_app/models/Product.dart';
+import 'package:sirvice_app/models/Project.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -8,10 +8,10 @@ import '../../../size_config.dart';
 class ColorDots extends StatelessWidget {
   const ColorDots({
     Key? key,
-    required this.product,
+    required this.project,
   }) : super(key: key);
 
-  final Product product;
+  final Project project;
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +23,9 @@ class ColorDots extends StatelessWidget {
       child: Row(
         children: [
           ...List.generate(
-            product.colors.length,
+            project.colors.length,
             (index) => ColorDot(
-              color: product.colors[index],
+              color: project.colors[index],
               isSelected: index == selectedColor,
             ),
           ),

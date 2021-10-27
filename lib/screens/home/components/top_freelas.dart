@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:sirvice_app/screens/freelancers/profile_page_bezzos.dart';
+import 'package:sirvice_app/screens/freelancers/profile_page_gates.dart';
+import 'package:sirvice_app/screens/freelancers/profile_page_musk.dart';
+import 'package:sirvice_app/screens/freelancers/profile_page_zuck.dart';
 
 import '../../../size_config.dart';
 import 'section_title.dart';
 
-class SpecialOffers extends StatelessWidget {
-  const SpecialOffers({
+class TopFreelas extends StatelessWidget {
+  const TopFreelas({
     Key? key,
   }) : super(key: key);
 
@@ -16,7 +20,7 @@ class SpecialOffers extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SectionTitle(
-            title: "Special for you",
+            title: "Top Freelancers",
             press: () {},
           ),
         ),
@@ -26,16 +30,36 @@ class SpecialOffers extends StatelessWidget {
           child: Row(
             children: [
               SpecialOfferCard(
-                image: "assets/images/Image Banner 2.png",
-                category: "Smartphone",
+                image: "assets/images/billgates.jpg",
+                category: "Bill G.",
                 numOfBrands: 18,
-                press: () {},
+                press: () {
+                  Navigator.pushNamed(context, ProfilePageGates.routeName);
+                },
               ),
               SpecialOfferCard(
-                image: "assets/images/Image Banner 3.png",
-                category: "Fashion",
+                image: "assets/images/elonmusk.jpg",
+                category: "Elon M.",
                 numOfBrands: 24,
-                press: () {},
+                press: () {
+                  Navigator.pushNamed(context, ProfilePageMusk.routeName);
+                },
+              ),
+              SpecialOfferCard(
+                image: "assets/images/jeffbezos.jpg",
+                category: "Jeff B.",
+                numOfBrands: 37,
+                press: () {
+                  Navigator.pushNamed(context, ProfilePageBezzos.routeName);
+                },
+              ),
+              SpecialOfferCard(
+                image: "assets/images/marckzuckerberg.jpg",
+                category: "Mark Z.",
+                numOfBrands: 12,
+                press: () {
+                  Navigator.pushNamed(context, ProfilePageZuck.routeName);
+                },
               ),
               SizedBox(width: getProportionateScreenWidth(20)),
             ],
@@ -66,8 +90,8 @@ class SpecialOfferCard extends StatelessWidget {
       child: GestureDetector(
         onTap: press,
         child: SizedBox(
-          width: getProportionateScreenWidth(242),
-          height: getProportionateScreenWidth(100),
+          width: getProportionateScreenWidth(150),
+          height: getProportionateScreenWidth(150),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Stack(
@@ -90,7 +114,7 @@ class SpecialOfferCard extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: getProportionateScreenWidth(15.0),
+                    horizontal: getProportionateScreenWidth(12.0),
                     vertical: getProportionateScreenWidth(10),
                   ),
                   child: Text.rich(
@@ -100,11 +124,11 @@ class SpecialOfferCard extends StatelessWidget {
                         TextSpan(
                           text: "$category\n",
                           style: TextStyle(
-                            fontSize: getProportionateScreenWidth(18),
+                            fontSize: getProportionateScreenWidth(17),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        TextSpan(text: "$numOfBrands Brands")
+                        TextSpan(text: "$numOfBrands Projetos")
                       ],
                     ),
                   ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Product {
+class Project {
   final int id;
   final String title, description;
   final List<String> images;
@@ -8,7 +8,7 @@ class Product {
   final double rating, price;
   final bool isFavourite, isPopular;
 
-  Product({
+  Project({
     required this.id,
     required this.images,
     required this.colors,
@@ -23,14 +23,12 @@ class Product {
 
 // Our demo Products
 
-List<Product> demoProducts = [
-  Product(
+List<Project> demoProducts = [
+  Project(
     id: 1,
     images: [
-      "assets/images/ps4_console_white_1.png",
-      "assets/images/ps4_console_white_2.png",
-      "assets/images/ps4_console_white_3.png",
-      "assets/images/ps4_console_white_4.png",
+      "assets/images/javaCode.png",
+      "assets/images/javaAndroidCode.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -38,17 +36,18 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Wireless Controller for PS4™",
+    title:
+        "Aplicação integrada Java e Spring Boot para a criação de um microserviço",
     price: 64.99,
     description: description,
     rating: 4.8,
     isFavourite: true,
     isPopular: true,
   ),
-  Product(
+  Project(
     id: 2,
     images: [
-      "assets/images/Image Popular Product 2.png",
+      "assets/images/kotlinCode.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -56,16 +55,17 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Nike Sport White - Man Pant",
+    title:
+        "Aplicativo feito em flutter, mini e-commerce com o fluxo de pedido, carrinho de compras e extrato dos pedidos feitos.",
     price: 50.5,
     description: description,
     rating: 4.1,
     isPopular: true,
   ),
-  Product(
+  Project(
     id: 3,
     images: [
-      "assets/images/glap.png",
+      "assets/images/gradleMobileCode.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -73,17 +73,18 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Gloves XC Omega - Polygon",
+    title:
+        "Uma ferramenta de automação de compilação, para facilitar a realização dos itens abaixo: \nAdicionar recursos gratuitos e pagos a um aplicativo e configurar sua compilação para compartilhar código entre eles",
     price: 36.55,
     description: description,
     rating: 4.1,
     isFavourite: true,
     isPopular: true,
   ),
-  Product(
+  Project(
     id: 4,
     images: [
-      "assets/images/wireless headset.png",
+      "assets/images/webdevCode.png",
     ],
     colors: [
       Color(0xFFF6625E),
@@ -91,7 +92,8 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Logitech Head",
+    title:
+        "Desenvolvimento de uma aplicação utilizando o servidor de aplicação tomcat",
     price: 20.20,
     description: description,
     rating: 4.1,
@@ -100,4 +102,4 @@ List<Product> demoProducts = [
 ];
 
 const String description =
-    "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing …";
+    "Aplicação Spring Boot com suporte para impressão de relatórios em Jasper Reports.";

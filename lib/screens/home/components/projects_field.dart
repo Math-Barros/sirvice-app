@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:sirvice_app/components/product_card.dart';
-import 'package:sirvice_app/models/Product.dart';
+import 'package:sirvice_app/components/project_card.dart';
+import 'package:sirvice_app/models/Project.dart';
 
 import '../../../size_config.dart';
 import 'section_title.dart';
 
-class PopularProducts extends StatelessWidget {
+class PopularProjects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,7 +13,7 @@ class PopularProducts extends StatelessWidget {
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(title: "Freelancers populares", press: () {}),
+          child: SectionTitle(title: "Buscar Projetos", press: () {}),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(
@@ -23,8 +23,12 @@ class PopularProducts extends StatelessWidget {
               ...List.generate(
                 demoProducts.length,
                 (index) {
+                  BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    color: Colors.redAccent,
+                  );
                   if (demoProducts[index].isPopular)
-                    return ProductCard(product: demoProducts[index]);
+                    return ProjectCard(project: demoProducts[index]);
 
                   return SizedBox
                       .shrink(); // here by default width and height is 0

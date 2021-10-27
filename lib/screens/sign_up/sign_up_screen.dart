@@ -11,7 +11,8 @@ import 'package:sirvice_app/helper/authenticate.dart';
 import 'package:sirvice_app/main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sirvice_app/models/user.dart';
-import 'package:sirvice_app/screens/complete_profile/complete_profile_screen.dart';
+
+import 'package:sirvice_app/screens/sign_in/sign_in_screen.dart';
 
 File? _image;
 
@@ -291,7 +292,7 @@ class _SignUpState extends State<SignUpScreen> {
     await hideProgress();
     if (result != null && result is User) {
       MyAppState.currentUser = result;
-      pushAndRemoveUntil(context, CompleteProfileScreen(), false);
+      pushAndRemoveUntil(context, SignInScreen(), false);
     } else if (result != null && result is String) {
       showAlertDialog(context, 'Failed', result);
     } else {
