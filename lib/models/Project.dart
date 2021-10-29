@@ -36,8 +36,7 @@ List<Project> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title:
-        "Aplicação integrada Java e Spring Boot para a criação de um microserviço",
+    title: "Aplicação Java e Spring Boot",
     price: 64.99,
     description: description,
     rating: 4.8,
@@ -55,8 +54,7 @@ List<Project> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title:
-        "Aplicativo feito em flutter, mini e-commerce com o fluxo de pedido, carrinho de compras e extrato dos pedidos feitos.",
+    title: "Aplicativo em flutter, \nmini e-commerce.",
     price: 50.5,
     description: description,
     rating: 4.1,
@@ -73,8 +71,7 @@ List<Project> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title:
-        "Uma ferramenta de automação de compilação, para facilitar a realização dos itens abaixo: \nAdicionar recursos gratuitos e pagos a um aplicativo e configurar sua compilação para compartilhar código entre eles",
+    title: "Adicionar recursos gratuitos e pagos a um aplicativo.",
     price: 36.55,
     description: description,
     rating: 4.1,
@@ -92,8 +89,7 @@ List<Project> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title:
-        "Desenvolvimento de uma aplicação utilizando o servidor de aplicação tomcat",
+    title: "Aplicação utilizando o servidor \nde aplicação tomcat",
     price: 20.20,
     description: description,
     rating: 4.1,
@@ -102,4 +98,4 @@ List<Project> demoProducts = [
 ];
 
 const String description =
-    "Aplicação Spring Boot com suporte para impressão de relatórios em Jasper Reports.";
+    "Spring Boot com suporte para impressão de \nrelatórios em Jasper Reports.";

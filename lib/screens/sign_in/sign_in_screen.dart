@@ -9,7 +9,7 @@ import 'package:sirvice_app/constants.dart';
 import 'package:sirvice_app/helper/authenticate.dart';
 import 'package:sirvice_app/main.dart';
 import 'package:sirvice_app/models/user.dart';
-import 'package:sirvice_app/screens/login_success/login_success_screen.dart';
+import 'package:sirvice_app/screens/profile/profile_screen.dart';
 import 'package:sirvice_app/size_config.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -192,7 +192,7 @@ class _SignInScreen extends State<SignInScreen> {
     await hideProgress();
     if (result != null && result is User) {
       MyAppState.currentUser = result;
-      Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+      pushAndRemoveUntil(context, ProfileScreen(user: result), false);
     } else if (result != null && result is String) {
       showAlertDialog(context, 'Falha na Autenticação', result);
     } else {
@@ -208,7 +208,7 @@ class _SignInScreen extends State<SignInScreen> {
       await hideProgress();
       if (result != null && result is User) {
         MyAppState.currentUser = result;
-        Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+        pushAndRemoveUntil(context, ProfileScreen(user: result), false);
       } else if (result != null && result is String) {
         showAlertDialog(context, 'Error', result);
       } else {
