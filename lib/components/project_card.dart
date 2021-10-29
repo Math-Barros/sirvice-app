@@ -34,16 +34,9 @@ class ProjectCard extends StatelessWidget {
             children: [
               AspectRatio(
                 aspectRatio: 1.02,
-                child: Container(
-                  padding: EdgeInsets.all(getProportionateScreenWidth(20)),
-                  decoration: BoxDecoration(
-                    color: kSecondaryColor.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Hero(
-                    tag: project.id.toString(),
-                    child: Image.asset(project.images[0]),
-                  ),
+                child: Hero(
+                  tag: project.id.toString(),
+                  child: Image.asset(project.images[0]),
                 ),
               ),
               const SizedBox(height: 10),
