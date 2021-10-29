@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:sirvice_app/components/coustom_bottom_nav_bar.dart';
 import 'package:sirvice_app/constants.dart';
 import 'package:sirvice_app/enums.dart';
@@ -24,9 +25,22 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   late User user;
 
+  late final _ratingController;
+  late double _rating;
+
+  double _userRating = 3.0;
+  int _ratingBarMode = 1;
+  double _initialRating = 2.0;
+  bool _isRTLMode = false;
+  bool _isVertical = false;
+
+  IconData? _selectedIcon;
+
   @override
   void initState() {
     super.initState();
+    _ratingController = TextEditingController(text: '3.0');
+    _rating = _initialRating;
     user = widget.user;
   }
 
@@ -54,18 +68,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
               label:
                   Text('Flutter Master', style: TextStyle(color: Colors.white)),
             ),
+            RatingBarIndicator(
+              rating: _userRating,
+              itemBuilder: (context, index) => Icon(
+                _selectedIcon ?? Icons.star,
+                color: Colors.amber,
+              ),
+              itemCount: 5,
+              itemSize: 30.0,
+              unratedColor: Colors.amber.withAlpha(50),
+              direction: _isVertical ? Axis.vertical : Axis.horizontal,
+            ),
             ProfileMenu(
-              text: "My Account",
+              text: "Minha Conta",
               icon: "assets/icons/User Icon.svg",
               press: () => {},
             ),
             ProfileMenu(
-              text: "Notifications",
-              icon: "assets/icons/Bell.svg",
+              text: "Meus Projetos",
+              icon: "assets/icons/java.svg",
               press: () {},
             ),
             ProfileMenu(
-              text: "Help Center",
+              text: "Meus Pedidos",
               icon: "assets/icons/Question mark.svg",
               press: () {},
             ),
