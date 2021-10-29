@@ -62,11 +62,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
               padding: const EdgeInsets.all(8.0),
               child: Text(user.email),
             ),
-            Chip(
-              padding: EdgeInsets.all(0),
-              backgroundColor: Colors.blue,
-              label:
-                  Text('Flutter Master', style: TextStyle(color: Colors.white)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: const <Widget>[
+                Chip(
+                  padding: EdgeInsets.all(0),
+                  backgroundColor: Colors.blue,
+                  label: Text('Flutter Master',
+                      style: TextStyle(color: Colors.white)),
+                ),
+                SizedBox(width: 10.0),
+                Chip(
+                  padding: EdgeInsets.all(0),
+                  backgroundColor: Colors.orange,
+                  label: Text('Java Tester',
+                      style: TextStyle(color: Colors.white)),
+                ),
+              ],
             ),
             RatingBarIndicator(
               rating: _userRating,

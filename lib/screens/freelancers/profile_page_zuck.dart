@@ -46,6 +46,19 @@ class _ProfilePageZuckState extends State<ProfilePageZuck> {
           ),
           const SizedBox(height: 24),
           buildName(user),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: const <Widget>[
+              Chip(
+                padding: EdgeInsets.all(0),
+                backgroundColor: Colors.blue,
+                label: Text('Facebook Developers',
+                    style: TextStyle(color: Colors.white)),
+              ),
+              SizedBox(width: 10.0),
+            ],
+          ),
           SizedBox(
             height: 10.0,
           ),

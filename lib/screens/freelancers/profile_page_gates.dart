@@ -46,6 +46,25 @@ class _ProfilePageGatesState extends State<ProfilePageGates> {
           ),
           const SizedBox(height: 24),
           buildName(user),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: const <Widget>[
+              Chip(
+                padding: EdgeInsets.all(0),
+                backgroundColor: Colors.blue,
+                label: Text('Microsoft Azure Dev Ops',
+                    style: TextStyle(color: Colors.white)),
+              ),
+              SizedBox(width: 10.0),
+              Chip(
+                padding: EdgeInsets.all(0),
+                backgroundColor: Colors.orange,
+                label: Text('API Developer',
+                    style: TextStyle(color: Colors.white)),
+              ),
+            ],
+          ),
           SizedBox(
             height: 10.0,
           ),

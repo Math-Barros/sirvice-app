@@ -46,6 +46,25 @@ class _ProfilePageMuskState extends State<ProfilePageMusk> {
           ),
           const SizedBox(height: 24),
           buildName(user),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: const <Widget>[
+              Chip(
+                padding: EdgeInsets.all(0),
+                backgroundColor: Colors.blue,
+                label: Text('Tesla Dev Ops Challenge',
+                    style: TextStyle(color: Colors.white)),
+              ),
+              SizedBox(width: 10.0),
+              Chip(
+                padding: EdgeInsets.all(0),
+                backgroundColor: Colors.orange,
+                label:
+                    Text('Cloud Master', style: TextStyle(color: Colors.white)),
+              ),
+            ],
+          ),
           SizedBox(
             height: 10.0,
           ),

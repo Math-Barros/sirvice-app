@@ -46,6 +46,25 @@ class _ProfilePageBezzosState extends State<ProfilePageBezzos> {
           ),
           const SizedBox(height: 24),
           buildName(user),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: const <Widget>[
+              Chip(
+                padding: EdgeInsets.all(0),
+                backgroundColor: Colors.blue,
+                label:
+                    Text('Amazon AWS', style: TextStyle(color: Colors.white)),
+              ),
+              SizedBox(width: 10.0),
+              Chip(
+                padding: EdgeInsets.all(0),
+                backgroundColor: Colors.orange,
+                label:
+                    Text('Cloud Master', style: TextStyle(color: Colors.white)),
+              ),
+            ],
+          ),
           SizedBox(
             height: 10.0,
           ),
