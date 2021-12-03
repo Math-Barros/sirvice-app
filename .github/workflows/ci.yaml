@@ -1,0 +1,82 @@
+name: CI
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:    
+
+jobs:
+  flutter_test:
+    name: Run flutter test and analyze
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '2.0.6'
+          channel: 'stable'    
+
+      # Run flutter commands to test code
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test 
+
+  # build_ios:
+  #   name: Build Flutter (iOS)
+  #   needs: [flutter_test]
+  #   runs-on: macos-latest
+  #   # Steps represent a sequence of tasks that will be executed as part of the job
+  #   steps:
+  #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-java@v1
+  #       with:
+  #         java-version: "12.x"
+  #     - uses: subosito/flutter-action@v1
+  #       with:
+  #        flutter-version: '2.0.6'
+  #        channel: 'stable'  
+  #     # Run flutter commands to test code
+  #     - run: flutter clean
+  #     - run: flutter pub get
+  #     # get firebase config
+  #     - name: Decode Google-service-Info.plist
+  #       env: 
+  #         FIREBASE_IOS: ${{ secrets.FIREBASE_IOS }}
+  #       run: echo $FIREBASE_IOS > ./ios/Runner/GoogleService-Info.plist
+  #     - run: flutter build ios --no-codesign
+
+  build_appbundle:
+    name: Build Flutter (Android)
+    needs: [flutter_test]
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1  
+        with:
+          flutter-version: '2.0.6'
+          channel: 'stable'  
+
+      # Run flutter commands to test code
+      - run: flutter clean
+      - run: flutter pub get
+      # get firebase config
+      - name: Decode google-services.json
+        env: 
+          FIREBASE_ANDROID: ${{ secrets.FIREBASE_ANDROID }}
+        run: echo $FIREBASE_ANDROID > ./android/app/google-services.json 
+      - run: flutter build appbundle --profile  
