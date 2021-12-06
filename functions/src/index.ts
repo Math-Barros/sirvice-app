@@ -16,7 +16,7 @@ export const onServiceAccountCreation = functions.auth.user().onCreate(async (us
         const userID = user.uid
         const userEmail = user.email
 
-        if (userEmail == 'leaf.flutter@gmail.com'){
+        if (userEmail == 'sirvice.flutter@gmail.com'){
             await admin.firestore().collection('admin').doc(userID).set({})
         }
     }
@@ -82,7 +82,7 @@ export const onProfileNameUpdate = functions.firestore
         }
         // is user is deleted give default name
         if (afterFirstname === null && afterLastname === null){
-            afterFirstname = 'Leaf'
+            afterFirstname = 'Sirvice'
             afterLastname = 'User'
         }
 

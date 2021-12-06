@@ -8,7 +8,7 @@ import 'package:sirvice_app/profile/profile_page.dart';
 import 'messages_provider.dart';
 import 'widgets/message_bar.dart';
 import 'widgets/messages_list.dart';
-import '../global/widgets/leaf_error.dart';
+import '../global/widgets/sirvice_error.dart';
 
 class MessagesPage extends StatefulWidget {
   static const routeName = '/chat';
@@ -87,7 +87,7 @@ class _MessagesPageState extends State<MessagesPage>
       ),
       body: isError
           ? Center(
-              child: LeafError(
+              child: SirviceError(
                   context.read<MessagesProvider>().refetchMessages, widget.rid))
           : isLoading
               ? Center(child: CircularProgressIndicator())

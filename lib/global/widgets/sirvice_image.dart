@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class LeafImage extends StatelessWidget {
+class SirviceImage extends StatelessWidget {
   final String text;
   final String assetImage;
 
-  const LeafImage({Key? key, this.text = '', required this.assetImage}) : super(key: key);
+  const SirviceImage({Key? key, this.text = '', required this.assetImage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

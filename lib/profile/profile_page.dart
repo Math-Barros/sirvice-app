@@ -2,7 +2,7 @@ import 'package:intl/intl.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sirvice_app/global/widgets/leaf_error.dart';
+import 'package:sirvice_app/global/widgets/sirvice_error.dart';
 import 'package:sirvice_app/localization/localization.dart';
 import 'package:sirvice_app/messages/messages_page.dart';
 
@@ -49,7 +49,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     Expanded(
                       child: Center(
-                        child: LeafError(
+                        child: SirviceError(
                             context.read<ProfileProvider>().reFetchProfile,
                             widget.uid),
                       ),

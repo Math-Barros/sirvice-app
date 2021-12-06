@@ -146,9 +146,9 @@ const PT_LANG = {
   // Folha inferior de localização
   'change_localization_btn_text': 'Alterar localização',
 
-  // Leaf Error
-  'leaf_error_msg_text': 'Algo deu errado, estamos trabalhando nisso',
-  'leaf_error_btn_text': 'Tente novamente',
+  // Sirvice Error
+  'sirvice_error_msg_text': 'Algo deu errado, estamos trabalhando nisso',
+  'sirvice_error_btn_text': 'Tente novamente',
 
   // Global
   'error_msg': 'Algo deu errado, tente novamente',

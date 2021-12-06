@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sirvice_app/localization/localization.dart';
 
-class LeafError extends StatelessWidget {
+class SirviceError extends StatelessWidget {
   final Function reload;
   final dynamic args;
 
-  LeafError(this.reload, [this.args]);
+  SirviceError(this.reload, [this.args]);
 
   @override
   Widget build(BuildContext context) {

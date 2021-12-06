@@ -6,7 +6,7 @@ import 'package:showcaseview/showcaseview.dart';
 import 'package:sirvice_app/deals/widgets/deal_list.dart';
 import 'package:sirvice_app/freelancers/models/freelancer.dart';
 import 'package:sirvice_app/global/utils.dart';
-import 'package:sirvice_app/global/widgets/leaf_error.dart';
+import 'package:sirvice_app/global/widgets/sirvice_error.dart';
 import 'package:sirvice_app/global/widgets/paging_view.dart';
 import 'package:sirvice_app/localization/localization.dart';
 
@@ -118,7 +118,8 @@ class _DealsPageState extends State<DealsPage> {
                         child: CircularProgressIndicator(),
                       )
                     : isError
-                        ? LeafError(context.read<DealsProvider>().refetchDeals,
+                        ? SirviceError(
+                            context.read<DealsProvider>().refetchDeals,
                             widget.freelancer.isbn)
                         : DealList(),
               ),

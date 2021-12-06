@@ -24,7 +24,7 @@ const EN_LANG = {
       'Select the freelancer you want, press the ＋ button to add a deal.',
   'how_to_page2_title': 'How to receive notifications',
   'how_to_page2_body':
-      'Make sure to turn on notifications in [Settings ➞ Leaf ➞ Notifications] on iOS and [Settings ➞ Apps & notifications ➞ Leaf ➞ Notifications]. The steps may vary from android devices based on brand. If this doesent work try to delete and reinstall the app',
+      'Make sure to turn on notifications in [Settings ➞ Sirvice ➞ Notifications] on iOS and [Settings ➞ Apps & notifications ➞ Sirvice ➞ Notifications]. The steps may vary from android devices based on brand. If this doesent work try to delete and reinstall the app',
   'how_to_page3_title': 'How to send a fast message',
   'how_to_page3_body':
       'In the deals section you can send messages to people, Pro tip: long press the message button ➤ to send a fast message from the same page.',
@@ -144,9 +144,9 @@ const EN_LANG = {
   // Location Bottom Sheet
   'change_localization_btn_text': 'Change localization',
 
-  // Leaf Error
-  'leaf_error_msg_text': 'Something went wrong, we are working on it',
-  'leaf_error_btn_text': 'Try again',
+  // Sirvice Error
+  'sirvice_error_msg_text': 'Something went wrong, we are working on it',
+  'sirvice_error_btn_text': 'Try again',
 
   // Global
   'error_msg': 'Something went wrong, please try again',

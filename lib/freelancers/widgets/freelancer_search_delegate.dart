@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sirvice_app/freelancers/freelancer_provider.dart';
-import 'package:sirvice_app/global/widgets/leaf_image.dart';
+import 'package:sirvice_app/global/widgets/sirvice_image.dart';
 import 'package:sirvice_app/localization/localization.dart';
 
 class FreelancerSearchDelegate extends SearchDelegate<String?> {
@@ -75,7 +75,7 @@ class FreelancerSearchDelegate extends SearchDelegate<String?> {
 
   Widget _buildResultsList(BuildContext context) {
     if (freelancerMatches.isEmpty) {
-      return LeafImage(
+      return SirviceImage(
           text: 'Sorry couldn\'t find any matches',
           assetImage: 'assets/images/empty_box.png');
     }

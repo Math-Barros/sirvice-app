@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:sirvice_app/deals/deals_page.dart';
 import 'package:sirvice_app/freelancers/freelancer_provider.dart';
-import 'package:sirvice_app/global/widgets/leaf_error.dart';
+import 'package:sirvice_app/global/widgets/sirvice_error.dart';
 import 'package:sirvice_app/localization/localization.dart';
 
 import 'freelancer_item.dart';
@@ -17,7 +17,7 @@ class FreelancerList extends StatelessWidget {
     final isError = context.watch<FreelancersProvider>().isError;
     return isError
         ? SliverFillRemaining(
-            child: LeafError(
+            child: SirviceError(
                 context.read<FreelancersProvider>().reFetchFreelancers,
                 Localization.of(context).locale.languageCode))
         : SliverList(

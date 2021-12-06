@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
-        title: 'Leaf',
+        title: 'Sirvice',
         theme: ThemeData(
             primarySwatch: Colors.teal,
             textTheme:

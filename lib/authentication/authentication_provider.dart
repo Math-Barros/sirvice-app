@@ -58,7 +58,7 @@ class AuthenticationProvider with ChangeNotifier {
           firstname: firstname,
           lastname: lastname,
           imageUrl:
-              'https://firebasestorage.googleapis.com/v0/b/leaf-e52aa.appspot.com/o/profile.png?alt=media&token=ef36af4e-c528-4851-b429-53f867672b33',
+              'https://firebasestorage.googleapis.com/v0/b/sirvice-app.appspot.com/o/bender.jpg?alt=media&token=0fa13b28-7e6d-4d78-9f1a-185ea1fbe37c',
           userItems: {});
       await profileService.setProfile(uid: user.uid, profile: profile);
       // send email varification

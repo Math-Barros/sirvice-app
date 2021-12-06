@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:sirvice_app/deals/deals_page.dart';
 import 'package:sirvice_app/following/follow_provider.dart';
 import 'package:sirvice_app/following/widgets/follow_item.dart';
-import 'package:sirvice_app/global/widgets/leaf_error.dart';
+import 'package:sirvice_app/global/widgets/sirvice_error.dart';
 import 'package:sirvice_app/localization/localization.dart';
 
 class FollowList extends StatelessWidget {
@@ -18,7 +18,7 @@ class FollowList extends StatelessWidget {
             child: CircularProgressIndicator(),
           )
         : isError
-            ? LeafError(context.read<FollowProvider>().reFetchFollows)
+            ? SirviceError(context.read<FollowProvider>().reFetchFollows)
             : ListView.builder(
                 itemBuilder: (_, index) => InkWell(
                   onTap: () async {
