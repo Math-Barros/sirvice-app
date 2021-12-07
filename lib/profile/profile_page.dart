@@ -10,7 +10,6 @@ import 'profile_provider.dart';
 import 'widgets/edit_profile_bottom_sheet.dart';
 import 'widgets/profile_deals_list.dart';
 import 'widgets/profile_image.dart';
-import '../global/widgets/bezierContainer.dart';
 
 class ProfilePage extends StatefulWidget {
   static const routeName = '/profile';
@@ -59,11 +58,6 @@ class _ProfilePageState extends State<ProfilePage> {
               : SingleChildScrollView(
                   child: Stack(
                     children: [
-                      Positioned(
-                        top: -BezierContainer.height * .25, // .2 old val
-                        right: -BezierContainer.width * .5, // .2 old val
-                        child: BezierContainer(),
-                      ),
                       Column(
                         children: [
                           AppBar(

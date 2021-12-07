@@ -97,7 +97,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Sirvice',
         theme: ThemeData(
-            primarySwatch: Colors.teal,
+            primarySwatch: Colors.red,
             textTheme:
                 GoogleFonts.ralewayTextTheme(Theme.of(context).textTheme),
             elevatedButtonTheme: ElevatedButtonThemeData(

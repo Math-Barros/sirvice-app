@@ -13,9 +13,10 @@
    <application
         android:label="Sirvice"
         android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic = "true"
         android:requestLegacyExternalStorage="true">
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyASyQrD1FCJEmrPvrcLUWeGcn2pubkqFy8"/>
+               android:value="AIzaSyD080MGkhsloDYa6yKe3B7sPdImWRPYAEU"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

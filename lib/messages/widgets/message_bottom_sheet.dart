@@ -103,7 +103,7 @@ class MessageBottomSheet extends StatelessWidget {
                         showPreviewPage: false,
                         showAttributionMark: true,
                         context: context,
-                        apiKey: 'VCJ3XoTAeHnvIwwHAdr3SlTF4V1zq29q');
+                        apiKey: 'AIzaSyD080MGkhsloDYa6yKe3B7sPdImWRPYAEU');
                     hideOptions();
                     if (gif != null &&
                         gif.images.original != null &&

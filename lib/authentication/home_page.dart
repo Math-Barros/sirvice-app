@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
           backgroundColor: Theme.of(context).canvasColor.withOpacity(1),
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.chrome_reader_mode),
+                icon: Icon(Icons.person_search),
                 label: loc.getTranslatedValue('freelancers_tab_text')),
             BottomNavigationBarItem(
                 icon: chatNotification
@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                     : Icon(Icons.chat),
                 label: loc.getTranslatedValue('chats_tab_text')),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person),
+                icon: Icon(Icons.person_outlined),
                 label: loc.getTranslatedValue('profile_tab_text')),
             BottomNavigationBarItem(
                 icon: followingNotification

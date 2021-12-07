@@ -12,11 +12,11 @@ admin.initializeApp(
 )
 
 // makes a certain account into admin, this admin account is used as feedback related account
-export const onServiceAccountCreation = functions.auth.user().onCreate(async (user: { uid: any; email: any; }) => {
+export const onServiceAccountCreation = functions.auth.user().onCreate(async user => {
         const userID = user.uid
         const userEmail = user.email
 
-        if (userEmail == 'sirvice.flutter@gmail.com'){
+        if (userEmail == 'sirvicefire.flutter@gmail.com'){
             await admin.firestore().collection('admin').doc(userID).set({})
         }
     }
@@ -25,7 +25,7 @@ export const onServiceAccountCreation = functions.auth.user().onCreate(async (us
 // When a user updates his image, the data needs to be updates on other
 // collections as, the copy of the image Url are placed there to be received faster
 export const onProfileImageUpdate = functions.firestore
-    .document('profiles/{userID}').onUpdate(async (change: { before: { id: any; data: () => { (): any; new(): any; imageUrl: any; }; }; after: { data: () => { (): any; new(): any; imageUrl: any; }; }; }) => {
+    .document('profiles/{userID}').onUpdate(async change => {
         const userID = change.before.id
         const beforeImage = change.before.data().imageUrl
         var afterImage = change.after.data().imageUrl
@@ -47,7 +47,7 @@ export const onProfileImageUpdate = functions.firestore
 
         // Loop through deals and update image
         const dealDocs = deals.docs
-        dealDocs.forEach((doc: { ref: { update: (arg0: { userImage: any; }) => any; }; }) => {
+        dealDocs.forEach(doc => {
             const p = doc.ref.update({
                 userImage: afterImage
             })
@@ -56,7 +56,7 @@ export const onProfileImageUpdate = functions.firestore
 
         // Loop through chat infos and update image
         const messagesDocs = messages.docs
-        messagesDocs.forEach((doc: { ref: { update: (arg0: { receiverImage: any; }) => any; }; }) => {
+        messagesDocs.forEach(doc => {
             const p = doc.ref.update({
                 receiverImage: afterImage
             })
@@ -69,7 +69,7 @@ export const onProfileImageUpdate = functions.firestore
 // When a user updates his name, the data needs to be updates on other
 // collections as, the copy of the namel are placed there to be received faster
 export const onProfileNameUpdate = functions.firestore
-    .document('profiles/{userID}').onUpdate(async (change: { before: { id: any; data: () => { (): any; new(): any; firstname: any; lastname: any; }; }; after: { data: () => { (): any; new(): any; firstname: any; lastname: any; }; }; }) => {
+    .document('profiles/{userID}').onUpdate(async change => {
         const userID = change.before.id
         const beforeFirstname = change.before.data().firstname
         var afterFirstname = change.after.data().firstname
@@ -93,7 +93,7 @@ export const onProfileNameUpdate = functions.firestore
 
         // Loop through deals and update image
         const dealDocs = deals.docs
-        dealDocs.forEach((doc: { ref: { update: (arg0: { userName: string; }) => any; }; }) => {
+        dealDocs.forEach(doc => {
             const p = doc.ref.update({
                 userName: afterFirstname + ' ' + afterLastname
             })
@@ -102,7 +102,7 @@ export const onProfileNameUpdate = functions.firestore
 
         // Loop through chat infos and update image
         const messagesDocs = messages.docs
-        messagesDocs.forEach((doc: { ref: { update: (arg0: { receiverName: string; }) => any; }; }) => {
+        messagesDocs.forEach(doc => {
             const p = doc.ref.update({
                 receiverName: afterFirstname + ' ' + afterLastname
             })
@@ -116,7 +116,7 @@ export const onProfileNameUpdate = functions.firestore
 // Send notification when a messege is sent
 export const onSendMessage = functions.firestore
     .document('chats/{senderId}/recipients/{receiverId}/messages/{messageId}')
-    .onCreate(async (snapshot: { data: () => any; }, context: { params: { receiverId: any; senderId: any; messageId: any; }; }) => {
+    .onCreate(async (snapshot, context) => {
         // cant return before all futures are done, this wait for all to be done
         // before returning and have them be done async
         const promises: Promise<any>[] = [] // need this since the promises are of different type
@@ -197,43 +197,43 @@ export const onSendMessage = functions.firestore
 
 // Deal notifications when a new deal is added, also increment deals count 
 export const onAddDeal = functions.firestore
-.document('freelancers/{freelancerIsbn}/deals/{dealId}')
-.onCreate(async (_: any, context: { params: { freelancerIsbn: any; }; }) => {
+.document('books/{bookIsbn}/deals/{dealId}')
+.onCreate(async (_, context) => {
     // cant return before all futures are done, this wait for all to be done
     // before returning and have them be done async
     const promises: Promise<any>[] = [] // need this since the promises are of different type
-    const freelancerISBN = context.params.freelancerIsbn
+    const bookISBN = context.params.bookIsbn
 
-    // get freelancer doc
-    const freelancerDoc = await admin.firestore().collection('freelancers').doc(freelancerISBN).get() 
-    const freelancerImage = freelancerDoc.data()!.image
-    const freelancerTitle = freelancerDoc.data()!.title[0]
-    const freelancerMessage = 'New deal added for ' + freelancerTitle
+    // get book doc
+    const bookDoc = await admin.firestore().collection('books').doc(bookISBN).get() 
+    const bookImage = bookDoc.data()!.image
+    const bookTitle = bookDoc.data()!.title[0]
+    const bookMessage = 'New deal added for ' + bookTitle
 
-    // update freelancer deals count
-    await admin.firestore().collection('freelancers').doc(freelancerISBN).update({deals: FieldValue.increment(1)})
+    // update book deals count
+    await admin.firestore().collection('books').doc(bookISBN).update({deals: FieldValue.increment(1)})
 
 
     // build the notification
-    const type = 'freelancer'
+    const type = 'book'
     const payload = {
         notification: {
-            title: freelancerTitle,
-            body: freelancerMessage,
+            title: bookTitle,
+            body: bookMessage,
         },
         data: {
-            id: freelancerISBN,
-            title: freelancerTitle,
-            image: freelancerImage,
-            message: freelancerMessage,
+            id: bookISBN,
+            title: bookTitle,
+            image: bookImage,
+            message: bookMessage,
             type: type
         }
     }
 
     // set notification for all followers
-    const followers = await admin.firestore().collectionGroup('following').where("pid", "==", freelancerISBN).get()
+    const followers = await admin.firestore().collectionGroup('following').where("pid", "==", bookISBN).get()
     const followersDocs = followers.docs
-    followersDocs.forEach((doc: { ref: { update: (arg0: { notification: boolean; }) => any; }; }) => {
+    followersDocs.forEach(doc => {
         const p = doc.ref.update({
             notification: true
         })
@@ -241,48 +241,48 @@ export const onAddDeal = functions.firestore
     })
 
     // send the notification to the recievers topic
-    promises.push(admin.messaging().sendToTopic(freelancerISBN, payload))
+    promises.push(admin.messaging().sendToTopic(bookISBN, payload))
     return Promise.all(promises)
 });
 
 // Decrement deals count, when a deal is deleted, better than having it in the frontend
-// because of scope and also sometimes user deleted the deal, but its not reflected in freelancers collection
+// because of scope and also sometimes user deleted the deal, but its not reflected in books collection
 export const onDeleteDeal = functions.firestore
-.document('freelancers/{freelancerIsbn}/deals/{dealId}')
-.onDelete(async (_: any, context: { params: { freelancerIsbn: any; }; }) => {
-    // get freelancer isbn
-    const freelancerISBN = context.params.freelancerIsbn
-    // update freelancer deals count
-    return admin.firestore().collection('freelancers').doc(freelancerISBN).update({deals: FieldValue.increment(-1)})
+.document('books/{bookIsbn}/deals/{dealId}')
+.onDelete(async (_, context) => {
+    // get book isbn
+    const bookISBN = context.params.bookIsbn
+    // update book deals count
+    return admin.firestore().collection('books').doc(bookISBN).update({deals: FieldValue.increment(-1)})
 });
 
 export const onAddFollow = functions.firestore
 .document('profiles/{uid}/following/{followId}')
-.onCreate(async (_: any, context: { params: { followId: any; }; }) => {
-    // get freelancer isbn
-    const freelancerISBN = context.params.followId
-    // update freelancer deals count
-    return admin.firestore().collection('freelancers').doc(freelancerISBN).update({followings: FieldValue.increment(1)})
+.onCreate(async (_, context) => {
+    // get book isbn
+    const bookISBN = context.params.followId
+    // update book deals count
+    return admin.firestore().collection('books').doc(bookISBN).update({followings: FieldValue.increment(1)})
 });
 
 export const onRemoveFollow = functions.firestore
 .document('profiles/{uid}/following/{followId}')
-.onDelete(async (_: any, context: { params: { followId: any; }; }) => {
-    // get freelancer isbn
-    const freelancerISBN = context.params.followId
-    // update freelancer deals count
-    return admin.firestore().collection('freelancers').doc(freelancerISBN).update({followings: FieldValue.increment(-1)})
+.onDelete(async (_, context) => {
+    // get book isbn
+    const bookISBN = context.params.followId
+    // update book deals count
+    return admin.firestore().collection('books').doc(bookISBN).update({followings: FieldValue.increment(-1)})
 });
 
 // auth trigger (user deleted)
-export const onUserDelete = functions.auth.user().onDelete(async (user: { uid: string; }) => {
+export const onUserDelete = functions.auth.user().onDelete(async user => {
     const promises = []
     // delete user profile
     const userDoc = admin.firestore().collection('profiles').doc(user.uid)
     promises.push(userDoc.delete())
     // delete user followings collection in profile
     const userFollowings = await admin.firestore().collection('profiles').doc(user.uid).collection('following').get();
-    userFollowings.forEach((doc: { ref: { delete: () => any; }; }) => {
+    userFollowings.forEach(doc => {
          promises.push(doc.ref.delete())
     })
     // delete users message data
@@ -296,7 +296,7 @@ export const onUserDelete = functions.auth.user().onDelete(async (user: { uid: s
     // delete users deals, finds all collection with name deals and joins them togheter
     const deals = await admin.firestore().collectionGroup('deals').where("uid", "==", user.uid).get()
     const dealDocs = deals.docs
-    dealDocs.forEach((doc: { ref: { delete: () => any; }; }) => {
+    dealDocs.forEach(doc => {
         const p = doc.ref.delete()
         promises.push(p)
     })

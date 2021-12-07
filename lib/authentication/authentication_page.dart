@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sirvice_app/global/widgets/bezierContainer.dart';
 
 import 'widgets/authentication_form.dart';
 
@@ -13,15 +12,6 @@ class AuthenticationPage extends StatelessWidget {
         onTap: () => FocusScope.of(context).unfocus(),
         child: Stack(
           children: [
-            Positioned(
-              top: -BezierContainer.height * .10,
-              right: -BezierContainer.width * .3,
-              child: BezierContainer(Icon(
-                Icons.eco,
-                size: 100,
-                color: Theme.of(context).primaryColorLight,
-              )),
-            ),
             Container(
               height: height,
               // hack to make gesture detector work
