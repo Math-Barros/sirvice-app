@@ -49,10 +49,9 @@ class _CreateAccountBottomSheetState extends State<CreateAccountBottomSheet> {
                       color: Theme.of(context).primaryColorDark),
                 ),
               ),
-              Icon(
-                Icons.laptop_mac,
-                size: 80,
-                color: Theme.of(context).primaryColor,
+              Image.asset(
+                'assets/icon/letter.png',
+                height: 200,
               ),
               TextField(
                 textCapitalization: TextCapitalization.words,

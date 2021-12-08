@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "407192269059",
+    "firebase_url": "https://sirvice-app-default-rtdb.firebaseio.com",
     "project_id": "sirvice-app",
     "storage_bucket": "sirvice-app.appspot.com"
   },
@@ -14,13 +15,21 @@
       },
       "oauth_client": [
         {
+          "client_id": "407192269059-nap2cjg2jok0b7vhkei4jv45ur8k9mc0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sirvice_app",
+            "certificate_hash": "2fc8c2775b58ffa09c55cbed90882553863b1625"
+          }
+        },
+        {
           "client_id": "407192269059-or1u9djnn2s04crmn9duegnar7h4u2mb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBapoUHMyuZqg0GaBHzt_gV29zkOwPun6M"
+          "current_key": "AIzaSyBLicEmIxx5YxXRRY60F2Q5K4ify978k5s"
         }
       ],
       "services": {

@@ -27,6 +27,7 @@ class BlurredImageAppBar extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     final loc = Localization.of(context);
     return AppBar(
+      // ignore: deprecated_member_use
       brightness: Brightness.dark,
       title: Text(freelancer.titles.first),
       flexibleSpace: ClipRect(

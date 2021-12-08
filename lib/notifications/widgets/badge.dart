@@ -26,6 +26,7 @@ class Badge extends StatelessWidget {
             // color: Theme.of(context).accentColor,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
+              // ignore: deprecated_member_use
               color: color ?? Theme.of(context).accentColor,
             ),
             constraints: BoxConstraints(
@@ -35,10 +36,7 @@ class Badge extends StatelessWidget {
             child: Text(
               value,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 6,
-                color: Colors.white
-              ),
+              style: TextStyle(fontSize: 6, color: Colors.white),
             ),
           ),
         )
