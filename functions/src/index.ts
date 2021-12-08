@@ -197,41 +197,41 @@ export const onSendMessage = functions.firestore
 
 // Deal notifications when a new deal is added, also increment deals count 
 export const onAddDeal = functions.firestore
-.document('books/{bookIsbn}/deals/{dealId}')
+.document('freelancers/{freelancerIsbn}/deals/{dealId}')
 .onCreate(async (_, context) => {
     // cant return before all futures are done, this wait for all to be done
     // before returning and have them be done async
     const promises: Promise<any>[] = [] // need this since the promises are of different type
-    const bookISBN = context.params.bookIsbn
+    const freelancerISBN = context.params.freelancerIsbn
 
-    // get book doc
-    const bookDoc = await admin.firestore().collection('books').doc(bookISBN).get() 
-    const bookImage = bookDoc.data()!.image
-    const bookTitle = bookDoc.data()!.title[0]
-    const bookMessage = 'New deal added for ' + bookTitle
+    // get freelancer doc
+    const freelancerDoc = await admin.firestore().collection('freelancers').doc(freelancerISBN).get() 
+    const freelancerImage = freelancerDoc.data()!.image
+    const freelancerTitle = freelancerDoc.data()!.title[0]
+    const freelancerMessage = 'New deal added for ' + freelancerTitle
 
-    // update book deals count
-    await admin.firestore().collection('books').doc(bookISBN).update({deals: FieldValue.increment(1)})
+    // update freelancer deals count
+    await admin.firestore().collection('freelancers').doc(freelancerISBN).update({deals: FieldValue.increment(1)})
 
 
     // build the notification
-    const type = 'book'
+    const type = 'freelancer'
     const payload = {
         notification: {
-            title: bookTitle,
-            body: bookMessage,
+            title: freelancerTitle,
+            body: freelancerMessage,
         },
         data: {
-            id: bookISBN,
-            title: bookTitle,
-            image: bookImage,
-            message: bookMessage,
+            id: freelancerISBN,
+            title: freelancerTitle,
+            image: freelancerImage,
+            message: freelancerMessage,
             type: type
         }
     }
 
     // set notification for all followers
-    const followers = await admin.firestore().collectionGroup('following').where("pid", "==", bookISBN).get()
+    const followers = await admin.firestore().collectionGroup('following').where("pid", "==", freelancerISBN).get()
     const followersDocs = followers.docs
     followersDocs.forEach(doc => {
         const p = doc.ref.update({
@@ -241,37 +241,37 @@ export const onAddDeal = functions.firestore
     })
 
     // send the notification to the recievers topic
-    promises.push(admin.messaging().sendToTopic(bookISBN, payload))
+    promises.push(admin.messaging().sendToTopic(freelancerISBN, payload))
     return Promise.all(promises)
 });
 
 // Decrement deals count, when a deal is deleted, better than having it in the frontend
-// because of scope and also sometimes user deleted the deal, but its not reflected in books collection
+// because of scope and also sometimes user deleted the deal, but its not reflected in freelancers collection
 export const onDeleteDeal = functions.firestore
-.document('books/{bookIsbn}/deals/{dealId}')
+.document('freelancers/{freelancerIsbn}/deals/{dealId}')
 .onDelete(async (_, context) => {
-    // get book isbn
-    const bookISBN = context.params.bookIsbn
-    // update book deals count
-    return admin.firestore().collection('books').doc(bookISBN).update({deals: FieldValue.increment(-1)})
+    // get freelancer isbn
+    const freelancerISBN = context.params.freelancerIsbn
+    // update freelancer deals count
+    return admin.firestore().collection('freelancers').doc(freelancerISBN).update({deals: FieldValue.increment(-1)})
 });
 
 export const onAddFollow = functions.firestore
 .document('profiles/{uid}/following/{followId}')
 .onCreate(async (_, context) => {
-    // get book isbn
-    const bookISBN = context.params.followId
-    // update book deals count
-    return admin.firestore().collection('books').doc(bookISBN).update({followings: FieldValue.increment(1)})
+    // get freelancer isbn
+    const freelancerISBN = context.params.followId
+    // update freelancer deals count
+    return admin.firestore().collection('freelancers').doc(freelancerISBN).update({followings: FieldValue.increment(1)})
 });
 
 export const onRemoveFollow = functions.firestore
 .document('profiles/{uid}/following/{followId}')
 .onDelete(async (_, context) => {
-    // get book isbn
-    const bookISBN = context.params.followId
-    // update book deals count
-    return admin.firestore().collection('books').doc(bookISBN).update({followings: FieldValue.increment(-1)})
+    // get freelancer isbn
+    const freelancerISBN = context.params.followId
+    // update freelancer deals count
+    return admin.firestore().collection('freelancers').doc(freelancerISBN).update({followings: FieldValue.increment(-1)})
 });
 
 // auth trigger (user deleted)

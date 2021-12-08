@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:introduction_screen/introduction_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:sirvice_app/authentication/authentication_provider.dart';
 import 'package:sirvice_app/global/utils.dart';
@@ -27,6 +28,10 @@ class _AuthenticationFormState extends State<AuthenticationForm> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          Image.asset(
+            'assets/icon/black_logo.png',
+            height: 240,
+          ),
           TextField(
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(

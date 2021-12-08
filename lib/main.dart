@@ -99,7 +99,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             primarySwatch: Colors.red,
             textTheme:
-                GoogleFonts.ralewayTextTheme(Theme.of(context).textTheme),
+                GoogleFonts.novaSquareTextTheme(Theme.of(context).textTheme),
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
               elevation: 0,
