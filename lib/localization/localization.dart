@@ -19,7 +19,7 @@ class Localization {
   };
 
   String getTimeAgoLocale() {
-    const timeAgoLocale = {'en': 'en_short', 'pt': 'pt_NO_short'};
+    const timeAgoLocale = {'en': 'en_short', 'pt': 'pt_BR_short'};
     return timeAgoLocale[locale.languageCode]!;
   }
 

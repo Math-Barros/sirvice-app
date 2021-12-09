@@ -71,7 +71,7 @@ class Timeago extends TimerRefreshWidget {
   @override
   Widget build(BuildContext context) {
     // Need to add before we can use
-    timeago.setLocaleMessages('nb_NO_short', timeago.NbNoShortMessages());
+    timeago.setLocaleMessages('pt_BR_short', timeago.PtBrShortMessages());
     final formatted = timeago.format(date!,
         locale: locale, clock: clock, allowFromNow: allowFromNow);
     return builder(context, formatted);
