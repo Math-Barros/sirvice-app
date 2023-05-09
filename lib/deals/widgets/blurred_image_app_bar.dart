@@ -51,9 +51,6 @@ class BlurredImageAppBar extends StatelessWidget with PreferredSizeWidget {
         Showcase(
           key: two,
           description: loc.getTranslatedValue('showcase_filter_btn_text'),
-          shapeBorder: CircleBorder(),
-          contentPadding: EdgeInsets.all(10),
-          showArrow: false,
           child: IconButton(
             icon: Icon(Icons.filter_list_rounded),
             onPressed: () => showModalBottomSheet(
@@ -69,9 +66,6 @@ class BlurredImageAppBar extends StatelessWidget with PreferredSizeWidget {
         Showcase(
           key: one,
           description: loc.getTranslatedValue('showcase_add_btn_text'),
-          shapeBorder: CircleBorder(),
-          contentPadding: EdgeInsets.all(10),
-          showArrow: false,
           child: IconButton(
             icon: Icon(Icons.add),
             onPressed: () => showModalBottomSheet(

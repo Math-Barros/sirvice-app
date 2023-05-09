@@ -1,5 +1,4 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart'
     show LicenseEntryWithLineBreaks, LicenseRegistry, kDebugMode;
 import 'package:firebase_auth/firebase_auth.dart';
@@ -125,8 +124,8 @@ class MyApp extends StatelessWidget {
               late OverlayEntry onboardingScreen;
               onboardingScreen = OverlayEntry(
                   builder: (_) => OnboardingPage(onboardingScreen));
-              WidgetsBinding.instance!.addPostFrameCallback(
-                  (_) => Overlay.of(context)!.insert(onboardingScreen));
+              WidgetsBinding.instance.addPostFrameCallback(
+                  (_) => Overlay.of(context).insert(onboardingScreen));
             }
             return (user == null || !user.emailVerified)
                 ? AuthenticationPage()

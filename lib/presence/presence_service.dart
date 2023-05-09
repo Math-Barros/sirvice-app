@@ -1,6 +1,5 @@
 import 'dart:async';
 
-//import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class PresenceService {
@@ -16,8 +15,8 @@ class PresenceService {
     final lastOnlineRef =
         _database.reference().child('presence').child(uid).child('lastOnline');
 
-    // Needs to go back online if once gone offline i.g. logging out and inn
-    await _database.goOnline();    
+    // Needs to go back online if once gone offline i.g. logging out and in
+    await _database.goOnline();
 
     /*
       Need to have an extra listener just so, there some listener left after onDisconnect
@@ -36,7 +35,7 @@ class PresenceService {
         .listen((event) {});
 
     _subscription = _database.reference().child('.info/connected').onValue.listen((event) {
-      if (event.snapshot.value) {
+      if (event.snapshot.value != null && event.snapshot.value as bool) {
         // We're connected (or reconnected)! Do anything here that should happen only if online (or on reconnect)
         _con = myConnectionsRef.push();
         
@@ -56,9 +55,9 @@ class PresenceService {
   /// Get connection status
   Stream<dynamic> getUserPresenceStream(String uid){
     return _database.reference().child('presence').child(uid).onValue.map((event) {
-      final presenceData = event.snapshot.value;
+      final presenceData = event.snapshot.value as Map<dynamic, dynamic>;
       if (presenceData['connections'] == null){
-        final lastSeen = DateTime.fromMillisecondsSinceEpoch(presenceData['lastOnline']);
+        final lastSeen = DateTime.fromMillisecondsSinceEpoch(presenceData['lastOnline'] as int);
         return lastSeen;
       }
       return true;

@@ -32,7 +32,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
     def latestGooglePlayBuildNumber = Integer.valueOf(System.env.LATEST_GOOGLE_PLAY_BUILD_NUMBER ?: System.env.BUILD_NUMBER ?: 0)
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -45,6 +45,7 @@ android {
         targetSdkVersion 31
         versionCode latestGooglePlayBuildNumber + 1
         versionName flutterVersionName
+        multiDexEnabled true // Adicionado para suporte a multidex
     }
 
     signingConfigs {
@@ -69,12 +70,11 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.android.support:multidex:1.0.3"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.firebase:firebase-messaging:20.1.0'
 }
 
 // This must appear at the bottom of the file
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
-    

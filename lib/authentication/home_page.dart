@@ -9,7 +9,6 @@ import 'package:sirvice_app/freelancers/freelancers_page.dart';
 import 'package:sirvice_app/freelancers/models/freelancer.dart';
 import 'package:sirvice_app/localization/localization.dart';
 import 'package:sirvice_app/notifications/notification_provider.dart';
-import 'package:sirvice_app/notifications/widgets/badge.dart';
 import 'package:sirvice_app/presence/presence_provider.dart';
 
 import '../following/follow_page.dart';
@@ -91,7 +90,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     context.read<NotificationProvider>().subcribeToAllTopics();
 
     // track if paused or resumed etc.. and set up presence
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
     context.read<PresenceProvider>().configurePresence();
   }
 
@@ -111,7 +110,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   @override
   void dispose() {
     super.dispose();
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
   }
 
   void _setCurrentIndex(int index) {
@@ -137,7 +136,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             BottomNavigationBarItem(
                 icon: chatNotification
                     ? Badge(
-                        color: Colors.red[400],
+                        textColor: Colors.red[400],
                         child: Icon(Icons.chat_bubble_rounded))
                     : Icon(Icons.chat),
                 label: loc.getTranslatedValue('chats_tab_text')),
@@ -147,7 +146,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             BottomNavigationBarItem(
                 icon: followingNotification
                     ? Badge(
-                        color: Colors.red[400],
+                        textColor: Colors.red[400],
                         child: Icon(Icons.notifications_rounded))
                     : Icon(Icons.notifications_rounded),
                 label: loc.getTranslatedValue('follow_tab_text')),

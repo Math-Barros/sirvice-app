@@ -63,7 +63,7 @@ class OnboardingPage extends StatelessWidget {
       dotsDecorator: DotsDecorator(
           size: const Size.square(10.0),
           activeSize: const Size(20.0, 10.0),
-          activeColor: Theme.of(context).backgroundColor,
+          activeColor: Theme.of(context).colorScheme.background,
           color: Colors.black26,
           spacing: const EdgeInsets.symmetric(horizontal: 3.0),
           activeShape: RoundedRectangleBorder(

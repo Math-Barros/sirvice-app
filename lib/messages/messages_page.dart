@@ -32,7 +32,7 @@ class _MessagesPageState extends State<MessagesPage>
     super.initState();
     context.read<MessagesProvider>().unsubscribeFromChatNotifications();
     context.read<MessagesProvider>().fetchMessages(widget.rid);
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
@@ -51,7 +51,7 @@ class _MessagesPageState extends State<MessagesPage>
   @override
   void dispose() {
     super.dispose();
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
   }
 
   @override

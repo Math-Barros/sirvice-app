@@ -35,8 +35,7 @@ class _DealsPageState extends State<DealsPage> {
     super.initState();
     context.read<DealsProvider>().fetchDeals(widget.freelancer.isbn);
 
-    WidgetsBinding.instance!
-        .addPostFrameCallback((_) => _isFirstLaunch().then((result) {
+    WidgetsBinding.instance.addPostFrameCallback((_) => _isFirstLaunch().then((result) {
               if (result) {
                 ShowCaseWidget.of(context)!.startShowCase([_one, _two, _three]);
               }
@@ -54,88 +53,90 @@ class _DealsPageState extends State<DealsPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    final isFilter = context.watch<DealsProvider>().isFilter;
-    final isLoading = context.watch<DealsProvider>().isLoading;
-    final isError = context.watch<DealsProvider>().isError;
-    final isFollowBtnLoading =
-        context.watch<DealsProvider>().isFollowBtnLoading;
-    final isFollowing = context.watch<DealsProvider>().isFollowing;
-    final loc = Localization.of(context);
-    return Scaffold(
-      appBar: BlurredImageAppBar(widget.freelancer, _one, _two),
-      body: PagingView(
-        action: () => context
-            .read<DealsProvider>()
-            .fetchMoreDeals(widget.freelancer.isbn),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: FreelancerInfo(widget.freelancer),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Showcase(
-                  key: _three,
-                  description:
-                      loc.getTranslatedValue('showcase_follow_btn_text'),
-                  contentPadding: EdgeInsets.all(10),
-                  shapeBorder: RoundedRectangleBorder(),
-                  showArrow: false,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-                    onPressed: (isLoading || isFollowing)
-                        ? null
-                        : () => onPressHandler(
-                              context: context,
-                              action: () async => await context
-                                  .read<DealsProvider>()
-                                  .followFreelancer(widget.freelancer),
-                              successMessage: loc.getTranslatedValue(
-                                  'follow_success_msg_text'),
-                              errorMessage: loc.getTranslatedValue('error_msg'),
-                            ),
-                    child: isFollowBtnLoading
-                        ? SizedBox(
-                            height: 20,
-                            width: 20,
-                            child: CircularProgressIndicator(),
-                          )
-                        : Text(loc.getTranslatedValue('follow_btn_text')),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0, bottom: 60),
-                child: isLoading
-                    ? Container(
-                        alignment: Alignment.center,
-                        padding: const EdgeInsets.all(8.0),
-                        child: CircularProgressIndicator(),
-                      )
-                    : isError
-                        ? SirviceError(
-                            context.read<DealsProvider>().refetchDeals,
-                            widget.freelancer.isbn)
-                        : DealList(),
-              ),
-            ],
+Widget build(BuildContext context) {
+  final isFilter = context.watch<DealsProvider>().isFilter;
+  final isLoading = context.watch<DealsProvider>().isLoading;
+  final isError = context.watch<DealsProvider>().isError;
+  final isFollowBtnLoading = context.watch<DealsProvider>().isFollowBtnLoading;
+  final isFollowing = context.watch<DealsProvider>().isFollowing;
+  final loc = Localization.of(context);
+  return Scaffold(
+    appBar: BlurredImageAppBar(widget.freelancer, _one, _two),
+    body: PagingView(
+      action: () => context
+          .read<DealsProvider>()
+          .fetchMoreDeals(widget.freelancer.isbn),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FreelancerInfo(widget.freelancer),
+            ),
+            Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+  child: Showcase(
+    key: _three,
+    description: loc.getTranslatedValue('showcase_follow_btn_text'),
+    showArrow: false,
+    child: ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        padding: EdgeInsets.all(10), // Adicione o padding aqui
+        shape: RoundedRectangleBorder(), // Adicione o shape aqui
+      ),
+      onPressed: (isLoading || isFollowing)
+        ? null
+        : () => onPressHandler(
+            context: context,
+            action: () async => await context
+              .read<DealsProvider>()
+              .followFreelancer(widget.freelancer),
+            successMessage: loc.getTranslatedValue('follow_success_msg_text'),
+            errorMessage: loc.getTranslatedValue('error_msg'),
           ),
+      child: isFollowBtnLoading
+        ? SizedBox(
+            height: 20,
+            width: 20,
+            child: CircularProgressIndicator(),
+          )
+        : Text(loc.getTranslatedValue('follow_btn_text')),
+    ),
+  ),
+),
+
+
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0, bottom: 60),
+              child: isLoading
+                  ? Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircularProgressIndicator(),
+                    )
+                  : isError
+                      ? SirviceError(
+                          context.read<DealsProvider>().refetchDeals,
+                          widget.freelancer.isbn)
+                      : DealList(),
+            ),
+          ],
         ),
       ),
-      floatingActionButton: isFilter
-          ? FloatingActionButton.extended(
-              onPressed: () => context
-                  .read<DealsProvider>()
-                  .clearFilter(widget.freelancer.isbn),
-              label: Text(loc.getTranslatedValue('clear_filter_btn_text')),
-              icon: Icon(Icons.clear_all_rounded),
-            )
-          : null,
-    );
-  }
+    ),
+    floatingActionButton: isFilter
+        ? FloatingActionButton.extended(
+            onPressed: () => context
+                .read<DealsProvider>()
+                .clearFilter(widget.freelancer.isbn),
+            label: Text(loc.getTranslatedValue('clear_filter_btn_text')),
+            icon: Icon(Icons.clear_all_rounded),
+          )
+        : null,
+  );
+}
+
+
 }

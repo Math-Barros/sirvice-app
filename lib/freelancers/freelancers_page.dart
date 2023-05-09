@@ -17,7 +17,7 @@ class _FreelancersPageState extends State<FreelancersPage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) => context
+    WidgetsBinding.instance.addPostFrameCallback((_) => context
         .read<FreelancersProvider>()
         .fetchFreelancers(Localization.of(context).locale.languageCode));
   }
